@@ -4,14 +4,39 @@ import {
   faSearchLocation,
   faCloudSun,
   faCloudRain,
+  faSmog,
+  faBolt,
+  faSnowman,
+  faSun,
+  faCloud,
 } from "@fortawesome/free-solid-svg-icons"
 
-const Overview = () => {
+const Overview = ({ temperature, city, icon }) => {
+  let weatherIcons = null
 
-
-
-
-
+  if (icon === "Haze") {
+    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+  } else if (icon === "Thunderstorm") {
+    weatherIcons = <FontAwesomeIcon icon={faBolt} size="lg" color="#212121" />
+  } else if (icon === "Drizzle") {
+    weatherIcons = (
+      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
+    )
+  } else if (icon === "Rain") {
+    weatherIcons = (
+      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
+    )
+  } else if (icon === "Snow") {
+    weatherIcons = (
+      <FontAwesomeIcon icon={faSnowman} size="lg" color="#212121" />
+    )
+  } else if (icon === "Mist") {
+    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+  } else if (icon === "Clear") {
+    weatherIcons = <FontAwesomeIcon icon={faSun} size="lg" color="#212121" />
+  } else if (icon === "Clouds") {
+    weatherIcons = <FontAwesomeIcon icon={faCloud} size="lg" color="#212121" />
+  }
 
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
@@ -36,7 +61,7 @@ const Overview = () => {
         />
         {/* Insert Data */}
         <p class="text-5xl flex">
-          12 <span class="text-2xl ">°F</span>
+          {Math.floor(temperature)} <span class="text-2xl ">°F</span>
         </p>
 
         {/* Insert Data */}

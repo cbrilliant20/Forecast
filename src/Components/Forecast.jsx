@@ -1,11 +1,47 @@
-import { faCloudSun } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faSearchLocation,
+  faCloudSun,
+  faCloudRain,
+  faSmog,
+  faBolt,
+  faSnowman,
+  faSun,
+  faCloud,
+} from "@fortawesome/free-solid-svg-icons"
 import React from "react"
+import moment from "moment"
 
-const Forecast = () => {
+const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
+  let weatherIcons = null
+
+  if (icon === "Haze") {
+    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+  } else if (icon === "Thunderstorm") {
+    weatherIcons = <FontAwesomeIcon icon={faBolt} size="lg" color="#212121" />
+  } else if (icon === "Drizzle") {
+    weatherIcons = (
+      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
+    )
+  } else if (icon === "Rain") {
+    weatherIcons = (
+      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
+    )
+  } else if (icon === "Snow") {
+    weatherIcons = (
+      <FontAwesomeIcon icon={faSnowman} size="lg" color="#212121" />
+    )
+  } else if (icon === "Mist") {
+    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+  } else if (icon === "Clear") {
+    weatherIcons = <FontAwesomeIcon icon={faSun} size="lg" color="#212121" />
+  } else if (icon === "Clouds") {
+    weatherIcons = <FontAwesomeIcon icon={faCloud} size="lg" color="#212121" />
+  }
+
   return (
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl">
-      <div class="p-8 flex  items-center justify-between">
+      <div class="py-8 px-4 flex  items-center justify-between ">
         <div class="flex gap-x-4">
           <p>Today</p>
           <p>Week</p>
@@ -26,34 +62,31 @@ const Forecast = () => {
         </div>
       </div>
 
-      {/* Cards */}
-      <div class="flex flex-row gap-2 mx-8  ">
-        {/* Card #1 */}
-        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3">
-          <p class="">Sun</p>
-          <FontAwesomeIcon icon={faCloudSun} />
-          <p>
-            15° <span class="text-lightGray">-3°</span>
-          </p>
-        </div>
-
-        {/* Card #1 */}
-        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3">
-          <p class="">Sun</p>
-          <FontAwesomeIcon icon={faCloudSun} />
-          <p>
-            15° <span class="text-lightGray">-3°</span>
-          </p>
-        </div>
-        {/* Card #1 */}
-        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3">
-          <p class="">Sun</p>
-          <FontAwesomeIcon icon={faCloudSun} />
-          <p>
-            15° <span class="text-lightGray">-3°</span>
-          </p>
-        </div>
+      {/* Forecast Daily */}
+      <div class="flex flex-row gap-2 mx-4  text-center text-sm ">
+        {forecastDaily.slice(0, 5).map((data, index) => {
+          return (
+            <div
+              class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
+              key={index}
+            >
+              <p class="">{data.weather[0].description}</p>
+              {weatherIcons}
+              <p class="flex gap-x-2">
+                {Math.floor(data.temp.max)}
+                {"°"}
+                <span class="text-lightGray">
+                  {Math.floor(data.temp.min)}
+                  {"°"}
+                </span>
+              </p>
+            </div>
+          )
+        })}
       </div>
+
+      {/* Forecast Hourly */}
+
     </section>
   )
 }
