@@ -1,8 +1,4 @@
 import React from "react"
-import { faCloudSun, faCloudRain } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { DateTime } from "luxon"
-
 
 const Highlights = ({ current }) => {
   return (

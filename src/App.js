@@ -16,7 +16,8 @@ function App() {
   const [forecastDaily, setForecastDaily] = useState([])
   const [forecastHourly, setForecastHourly] = useState([])
   const [current, setCurrent] = useState([])
-  const [currentWeather, setCurrentWearther] = useState([])
+  const [currentWeather, setCurrentWeather] = useState([])
+  const [forecastDailyIcon, setForecastDailyIcon] = useState("")
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLatitude(position.coords.latitude)
@@ -32,7 +33,8 @@ function App() {
         setForecastDaily(weatherData.data.daily)
         setForecastHourly(weatherData.data.hourly)
         setCurrent(weatherData.data.current)
-        setCurrentWearther(weatherData.data.current.weather[0])
+        setCurrentWeather(weatherData.data.current.weather[0])
+        // setForecastDailyIcon(weatherData.data.daily.weather[0].main)
       })
   }, [latitude, longitude])
 
@@ -53,6 +55,7 @@ function App() {
           forecastDaily={forecastDaily}
           forecastHourly={forecastHourly}
           icon={icon}
+          forecastDailyIcon={forecastDailyIcon}
         />
         <Highlights class="row-span-2 col-span-2 ..." current={current} />
       </div>
