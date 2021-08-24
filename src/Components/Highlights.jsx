@@ -17,14 +17,6 @@ const Highlights = () => {
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
           <p class="self-start text-lightGray">UV Index</p>
         </div>
-        {/* Card #1 */}
-        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
-          <p class="self-start text-lightGray">UV Index</p>
-        </div>
-        {/* Card #1 */}
-        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
-          <p class="self-start text-lightGray">UV Index</p>
-        </div>
       </div>
     </section>
   )
