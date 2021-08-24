@@ -105,8 +105,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
                   {"°"}
                   <span class="text-lightGray">
                     {Math.floor(data.temp)}
-                    { "°" }
-                    hi
+                    {"°"}
                   </span>
                 </p>
               </div>

@@ -11,7 +11,7 @@ import {
   faCloud,
 } from "@fortawesome/free-solid-svg-icons"
 
-const Overview = ({ temperature, city, icon }) => {
+const Overview = ({ temperature, city, icon, handleSubmit, handleChange }) => {
   let weatherIcons = null
 
   if (icon === "Haze") {
@@ -38,14 +38,28 @@ const Overview = ({ temperature, city, icon }) => {
     weatherIcons = <FontAwesomeIcon icon={faCloud} size="lg" color="#212121" />
   }
 
+
+
+
+
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
       <div class="p-8 flex flex-col items-start justify-between h-full ">
-        <form action="" class="flex items-center gap-6">
+        {/* Form */}
+        {/* <form action="" class="flex items-center gap-6" onSubmit={handleSubmit}>
           <input
             type="text"
+            name="city"
             class="bg-none text-black outline-none"
-            placeholder="Search for places..."
+            placeholder="Search for City..."
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            name="country"
+            class="bg-none text-black outline-none"
+            placeholder="Search for Country..."
+            onChange={(e) => handleChange(e)}
           />
           <button
             class="bg-offWhite text-darkGray active:bg-pink-600 font-bold uppercase text-base px-3 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -53,7 +67,7 @@ const Overview = ({ temperature, city, icon }) => {
           >
             <FontAwesomeIcon icon={faSearchLocation} />
           </button>
-        </form>
+        </form> */}
         {/* Insert Data */}
         <img
           src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png"
