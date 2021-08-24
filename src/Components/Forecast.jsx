@@ -10,7 +10,6 @@ import {
   faCloud,
 } from "@fortawesome/free-solid-svg-icons"
 import React, { useState } from "react"
-import moment from "moment"
 
 const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
   const [toggle, setToggle] = useState(false)
@@ -48,6 +47,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
           <button onClick={() => setToggle(!toggle)}>Today</button>
           <button onClick={() => setToggle(!toggle)}>Weekly</button>
         </div>
+
         <div class="flex gap-x-4">
           <button
             class="bg-darkGray text-white active:bg-pink-600 font-bold uppercase text-base py-2 px-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150"

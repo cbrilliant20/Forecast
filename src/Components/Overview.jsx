@@ -1,4 +1,6 @@
 import React from "react"
+import { DateTime } from "luxon"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faSearchLocation,
@@ -41,29 +43,6 @@ const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
       <div class="p-8 flex flex-col items-start justify-between h-full ">
-        {/* Form */}
-        {/* <form action="" class="flex items-center gap-6" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="city"
-            class="bg-none text-black outline-none"
-            placeholder="Search for City..."
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="text"
-            name="country"
-            class="bg-none text-black outline-none"
-            placeholder="Search for Country..."
-            onChange={(e) => handleChange(e)}
-          />
-          <button
-            class="bg-offWhite text-darkGray active:bg-pink-600 font-bold uppercase text-base px-3 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="button"
-          >
-            <FontAwesomeIcon icon={faSearchLocation} />
-          </button>
-        </form> */}
         {/* Insert Data */}
         {weatherIcons}
 
@@ -73,7 +52,10 @@ const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
         </p>
         {/* Insert Data */}
         <p>
-          Monday, <span class="text-lightGray">16:00</span>
+          {DateTime.now().toFormat("MMMM dd")}, {/* <br /> */}
+          <span class="text-lightGray ml-1">
+            {DateTime.now().toFormat("hh: mm")}
+          </span>
         </p>
         <div class="h-1 w-full bg-offWhite self-center"></div>
         <hr class="text-lightGray" />
