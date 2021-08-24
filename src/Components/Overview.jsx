@@ -9,7 +9,7 @@ import {
 const Overview = () => {
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
-      <div class="p-12 flex flex-col items-start justify-between h-full ">
+      <div class="p-8 flex flex-col items-start justify-between h-full ">
         <form action="" class="flex items-center gap-6">
           <input
             type="text"
@@ -26,7 +26,7 @@ const Overview = () => {
         {/* Insert Data */}
         <img
           src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png"
-          class="w-3/4"
+          class="w-2/4"
         />
         {/* Insert Data */}
         <p class="text-5xl flex">
@@ -50,7 +50,7 @@ const Overview = () => {
           <p>Rain - 30%</p>
         </div>
         <div>
-          <button class="bg-darkGray text-white h-12 px-16 py-8 ">
+          <button class="bg-darkGray text-white  px-32 py-6 rounded-xl w-full">
             About the App
           </button>
         </div>
