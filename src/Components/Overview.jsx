@@ -1,12 +1,10 @@
 import React from "react"
 import { DateTime } from "luxon"
 
-const Overview = ({ icon, current, currentWeather }) => {
-  const iconurl =
-    "http://openweathermap.org/img/wn/" + `${currentWeather.icon}` + ".png"
+const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
+  const iconurl = `http://openweathermap.org/img/wn/${currentWeather.icon}.png`
 
-  const iconurlLarge =
-    "http://openweathermap.org/img/wn/" + `${currentWeather.icon}` + "@4x.png"
+  const iconurlLarge = `http://openweathermap.org/img/wn/${currentWeather.icon}@4x.png`
 
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
@@ -35,6 +33,7 @@ const Overview = ({ icon, current, currentWeather }) => {
         <div class="flex items-center gap-x-4 ">
           <img src={iconurl} alt="" />
           <p class="capitalize">{currentWeather.description}</p>
+          <p>{forecastHourly.pop}</p>
         </div>
         <div>
           <button class="bg-darkGray text-white  px-32 py-6 rounded-xl w-full">

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react"
 
 const URL = `https://api.openweathermap.org/data/2.5/onecall`
 const API_KEY = `10d288b61704a5239e53beef7ef992cb`
-const UNIT = `&units=imperial`
 
 function App() {
   const [latitude, setLatitude] = useState(null)
@@ -17,7 +16,8 @@ function App() {
   const [forecastHourly, setForecastHourly] = useState([])
   const [current, setCurrent] = useState([])
   const [currentWeather, setCurrentWeather] = useState([])
-  const [forecastDailyIcon, setForecastDailyIcon] = useState("")
+  const [pop, setPop] = useState("")
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLatitude(position.coords.latitude)
@@ -34,7 +34,7 @@ function App() {
         setForecastHourly(weatherData.data.hourly)
         setCurrent(weatherData.data.current)
         setCurrentWeather(weatherData.data.current.weather[0])
-        // setForecastDailyIcon(weatherData.data.daily.weather[0].main)
+        setPop(weatherData.data.pop)
       })
   }, [latitude, longitude])
 
@@ -49,13 +49,14 @@ function App() {
           icon={icon}
           current={current}
           currentWeather={currentWeather}
+          pop={pop}
+          forecastHourly={forecastHourly}
         />
         <Forecast
           class="col-span-3 "
           forecastDaily={forecastDaily}
           forecastHourly={forecastHourly}
           icon={icon}
-          forecastDailyIcon={forecastDailyIcon}
         />
         <Highlights class="row-span-2 col-span-2 " current={current} />
       </div>

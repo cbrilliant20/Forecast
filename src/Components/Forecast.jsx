@@ -50,10 +50,10 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
             const iconurl =
               "http://openweathermap.org/img/wn/" +
               `${data.weather[0].icon}` +
-              ".png"
+              "@2x.png"
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-4 py-3"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>
@@ -74,19 +74,19 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
 
       {/* Forecast Weekly */}
       {!toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6">
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6 ">
           {forecastHourly.slice(0, 5).map((data, index) => {
             const iconurl =
               "http://openweathermap.org/img/wn/" +
               `${data.weather[0].icon}` +
-              ".png"
+              "@2x.png"
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-4 py-3"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>
-                <img src={iconurl} alt="" />
+                <img src={iconurl} alt="" class="" />
                 <p class="flex gap-x-2">
                   {Math.floor(data.temp)}
                   {"°"}
