@@ -1,33 +1,7 @@
 import React from "react"
 import { DateTime } from "luxon"
-import cloud from "../Assets/cloud.png"
-import drizzle from "../Assets/drizzle.png"
-import fog from "../Assets/fog.png"
-import rain from "../Assets/rain.png"
-import snow from "../Assets/snow.png"
-import sun from "../Assets/sun.png"
-import thunder from "../Assets/thunder.png"
 
 const Overview = ({ icon, current, currentWeather }) => {
-  // let weatherIcons = null
-
-  // if (icon === "Haze") {
-  //   weatherIcons = <img src={fog} />
-  // } else if (icon === "Thunderstorm") {
-  //   weatherIcons = <img src={thunder} />
-  // } else if (icon === "Drizzle") {
-  //   weatherIcons = <img src={drizzle} />
-  // } else if (icon === "Rain") {
-  //   weatherIcons = <src src={rain} />
-  // } else if (icon === "Snow") {
-  //   weatherIcons = <img src={snow} />
-  // } else if (icon === "Mist") {
-  //   weatherIcons = <img src={fog} />
-  // } else if (icon === "Clear") {
-  //   weatherIcons = <img src={sun} />
-  // } else if (icon === "Clouds") {
-  //   weatherIcons = <img src={cloud} />
-  // }
   const iconurl =
     "http://openweathermap.org/img/wn/" + `${currentWeather.icon}` + ".png"
 
