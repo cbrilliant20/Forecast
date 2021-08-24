@@ -2,4 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+.tab-active {
+  color: #141414;
+  border-bottom: 1px solid #141414;
+}
+
+.tab-deactive {
+  color: #cccccf;
+  border-bottom: 1px transparent;
+}

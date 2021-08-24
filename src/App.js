@@ -43,21 +43,21 @@ function App() {
       className="App"
       class="bg-lightGray text-darkGray p-12 h-screen w-screen relative font-poppins "
     >
-      <div class=" bg-white h-full grid grid-rows-4 grid-cols-3 rounded-3xl ">
+      <div class="bg-white  h-full grid grid-rows-4 grid-cols-3 rounded-3xl ">
         <Overview
-          class="row-span-3"
+          class="row-span-3 "
           icon={icon}
           current={current}
           currentWeather={currentWeather}
         />
         <Forecast
-          class="col-span-3 ..."
+          class="col-span-3 "
           forecastDaily={forecastDaily}
           forecastHourly={forecastHourly}
           icon={icon}
           forecastDailyIcon={forecastDailyIcon}
         />
-        <Highlights class="row-span-2 col-span-2 ..." current={current} />
+        <Highlights class="row-span-2 col-span-2 " current={current} />
       </div>
     </div>
   )

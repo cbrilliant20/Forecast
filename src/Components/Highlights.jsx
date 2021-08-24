@@ -4,14 +4,14 @@ const Highlights = ({ current }) => {
   return (
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl  -mt-4">
       <div class="px-4 flex  items-center justify-between pb-4">
-        <div class="flex gap-x-4 ">
+        <div class="flex gap-x-4 mb-5">
           <p>Today's Highlights</p>
         </div>
       </div>
 
       {/* Cards */}
 
-      <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-4   ">
+      <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-4 ">
         {/* Humidity */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3 ">
           <p class="self-start text-lightGray">Humidity</p>
@@ -52,7 +52,7 @@ const Highlights = ({ current }) => {
         {/* Visibility */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
           <p class="self-start text-lightGray">Visibility</p>
-          {current.visibility / 1000} miles
+          {Math.round(current.visibility / 1609)} miles
         </div>
 
         {/* Feels Like */}

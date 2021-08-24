@@ -3,14 +3,30 @@ import React, { useState } from "react"
 const Forecast = ({ forecastDaily, forecastHourly }) => {
   const [toggle, setToggle] = useState(false)
 
+  const handleClick = (e) => {
+    setToggle(!toggle)
+  }
+
   return (
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl">
       <div class="pt-8 px-4 flex  items-center justify-between ">
         <div class="flex gap-x-4">
-          <button onClick={() => setToggle(!toggle)}>Today</button>
-          <button onClick={() => setToggle(!toggle)}>Weekly</button>
+          <button
+            onClick={handleClick}
+            className={`tab-active ${toggle ? "tab-deactive" : ""}`}
+          >
+            Today
+          </button>
+
+          <button
+            onClick={handleClick}
+            className={`tab-active ${!toggle ? "tab-deactive" : ""}`}
+          >
+            Weekly
+          </button>
         </div>
 
+        {/* F+C Button */}
         <div class="flex gap-x-4">
           <button
             class="bg-darkGray text-white active:bg-pink-600 font-bold uppercase text-base py-2 px-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150"
@@ -28,7 +44,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
       </div>
 
       {/* Forecast Daily */}
-      {!toggle && (
+      {toggle && (
         <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6">
           {forecastDaily.slice(0, 5).map((data, index) => {
             const iconurl =
@@ -57,7 +73,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
       )}
 
       {/* Forecast Weekly */}
-      {toggle && (
+      {!toggle && (
         <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6">
           {forecastHourly.slice(0, 5).map((data, index) => {
             const iconurl =
