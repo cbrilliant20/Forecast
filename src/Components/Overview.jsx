@@ -66,6 +66,7 @@ const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
         </form> */}
         {/* Insert Data */}
         {weatherIcons}
+
         {/* Insert Data */}
         <p class="text-5xl flex">
           {Math.floor(temperature)} <span class="text-2xl ">°F</span>

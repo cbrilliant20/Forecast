@@ -66,7 +66,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
 
       {/* Forecast Daily */}
       {!toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm ">
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize ">
           {forecastDaily.slice(0, 5).map((data, index) => {
             return (
               <div
@@ -91,7 +91,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
 
       {/* Forecast Hourly */}
       {toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm ">
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize">
           {forecastHourly.slice(0, 5).map((data, index) => {
             return (
               <div
