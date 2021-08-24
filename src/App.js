@@ -20,7 +20,9 @@ function App() {
   const [icon, setIcon] = useState("")
   const [forecastDaily, setForecastDaily] = useState([])
   const [forecastHourly, setForecastHourly] = useState([])
-  const [loading, setloading] = useState(true)
+  // const [loading, seLloading] = useState(true)
+  const [weatherDescription, setWeatherDescription] = useState(null)
+  const [weatherMain, setWeatherMain] = useState(null)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -29,10 +31,10 @@ function App() {
     })
     axios
       .get(
-        `${URL}?lat=${latitude}&lon=${longitude}&exclude=minutely&appid=${API_KEY}&units=metric`
+        `${URL}?lat=${latitude}&lon=${longitude}&exclude=minutely&appid=${API_KEY}&units=imperial`
       )
       .then((weatherData) => {
-        setloading(false)
+        // setloading(false)
         setTemperature(weatherData.data.current.temp)
         setSunset(weatherData.data.current.sunset)
         setSunrise(weatherData.data.current.sunrise)
@@ -41,6 +43,8 @@ function App() {
         setIcon(weatherData.data.current.weather[0].main)
         setForecastDaily(weatherData.data.daily)
         setForecastHourly(weatherData.data.hourly)
+        setWeatherDescription(weatherData.data.current.weather[0].description)
+        setWeatherMain(weatherData.data.current.weather[0].main)
       })
   }, [latitude, longitude])
 
@@ -50,7 +54,13 @@ function App() {
       class="bg-lightGray text-darkGray p-16 h-screen w-screen relative font-poppins "
     >
       <div class=" bg-white h-full grid grid-rows-4 grid-cols-3 rounded-3xl ">
-        <Overview class="row-span-3" temperature={temperature} icon={icon} />
+        <Overview
+          class="row-span-3"
+          temperature={temperature}
+          icon={icon}
+          weatherMain={weatherMain}
+          weatherDescription={weatherDescription}
+        />
         <Forecast
           class="col-span-3 ..."
           forecastDaily={forecastDaily}

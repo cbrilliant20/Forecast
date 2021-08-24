@@ -11,7 +11,7 @@ import {
   faCloud,
 } from "@fortawesome/free-solid-svg-icons"
 
-const Overview = ({ temperature, city, icon, handleSubmit, handleChange }) => {
+const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
   let weatherIcons = null
 
   if (icon === "Haze") {
@@ -37,10 +37,6 @@ const Overview = ({ temperature, city, icon, handleSubmit, handleChange }) => {
   } else if (icon === "Clouds") {
     weatherIcons = <FontAwesomeIcon icon={faCloud} size="lg" color="#212121" />
   }
-
-
-
-
 
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
@@ -69,15 +65,11 @@ const Overview = ({ temperature, city, icon, handleSubmit, handleChange }) => {
           </button>
         </form> */}
         {/* Insert Data */}
-        <img
-          src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png"
-          class="w-2/4"
-        />
+        {weatherIcons}
         {/* Insert Data */}
         <p class="text-5xl flex">
           {Math.floor(temperature)} <span class="text-2xl ">°F</span>
         </p>
-
         {/* Insert Data */}
         <p>
           Monday, <span class="text-lightGray">16:00</span>
@@ -86,13 +78,13 @@ const Overview = ({ temperature, city, icon, handleSubmit, handleChange }) => {
         <hr class="text-lightGray" />
         {/* Insert Data */}
         <div class="flex items-center gap-x-4">
-          <FontAwesomeIcon icon={faCloudSun} />
-          <p>Mostly Cloudy</p>
+          {weatherIcons}
+          <p class="capitalize">{weatherDescription}</p>
         </div>
         {/* Insert Data */}
-        <div class="flex items-center gap-x-4">
-          <FontAwesomeIcon icon={faCloudRain} />
-          <p>Rain - 30%</p>
+        <div class="flex items-center gap-x-4 ">
+          {weatherIcons}
+          <p class="capitalize">{weatherMain}</p>
         </div>
         <div>
           <button class="bg-darkGray text-white  px-32 py-6 rounded-xl w-full">

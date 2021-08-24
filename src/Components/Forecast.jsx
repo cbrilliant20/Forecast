@@ -73,7 +73,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
                 class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
                 key={index}
               >
-                <p class="">{data.weather[0].description}</p>
+                <p class="">{data.weather[0].main}</p>
                 {weatherIcons}
                 <p class="flex gap-x-2">
                   {Math.floor(data.temp.max)}
