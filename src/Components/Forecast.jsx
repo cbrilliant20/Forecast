@@ -11,7 +11,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl">
       <div class="pt-8 px-4 flex  items-center justify-between ">
         <div class="flex gap-x-4">
-          <button
+          <button 
             onClick={handleClick}
             className={`tab-active ${toggle ? "tab-deactive" : ""}`}
           >
@@ -34,12 +34,12 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
           >
             <p class="flex ">°F</p>
           </button>
-          <button
+          {/* <button
             class="bg-white text-darkGray active:bg-pink-600 font-bold uppercase text-base py-2 px-2.5 rounded-full shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
             type="button"
           >
             <p class=" flex ">°C</p>
-          </button>
+          </button> */}
         </div>
       </div>
 

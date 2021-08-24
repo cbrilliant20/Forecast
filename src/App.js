@@ -11,7 +11,6 @@ const API_KEY = `10d288b61704a5239e53beef7ef992cb`
 function App() {
   const [latitude, setLatitude] = useState(null)
   const [longitude, setLongitude] = useState(null)
-  const [icon, setIcon] = useState("")
   const [forecastDaily, setForecastDaily] = useState([])
   const [forecastHourly, setForecastHourly] = useState([])
   const [current, setCurrent] = useState([])
@@ -29,7 +28,6 @@ function App() {
       )
       .then((weatherData) => {
         // setloading(false)
-        setIcon(weatherData.data.current.weather[0].main)
         setForecastDaily(weatherData.data.daily)
         setForecastHourly(weatherData.data.hourly)
         setCurrent(weatherData.data.current)
@@ -46,7 +44,6 @@ function App() {
       <div class="bg-white  h-full grid grid-rows-4 grid-cols-3 rounded-3xl ">
         <Overview
           class="row-span-3 "
-          icon={icon}
           current={current}
           currentWeather={currentWeather}
           pop={pop}
@@ -56,7 +53,6 @@ function App() {
           class="col-span-3 "
           forecastDaily={forecastDaily}
           forecastHourly={forecastHourly}
-          icon={icon}
         />
         <Highlights class="row-span-2 col-span-2 " current={current} />
       </div>

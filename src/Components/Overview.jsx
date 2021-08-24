@@ -18,22 +18,29 @@ const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
         <p>
           {DateTime.now().toFormat("MMMM dd")}, {/* <br /> */}
           <span class="text-lightGray ml-1">
-            {DateTime.now().toFormat("hh: mm")}
+            {DateTime.now().toFormat("hh:mm")}
           </span>
         </p>
-        <div class="h-1 w-full bg-offWhite self-center"></div>
-        <hr class="text-lightGray" />
-        {/* Insert Data */}
-        <div class="flex items-center gap-x-4">
-          <img src={iconurl} alt="" />
 
-          <p class="capitalize ">{currentWeather.main}</p>
-        </div>
+        <div class="h-1 w-full bg-offWhite self-center"></div>
+
         {/* Insert Data */}
         <div class="flex items-center gap-x-4 ">
           <img src={iconurl} alt="" />
           <p class="capitalize">{currentWeather.description}</p>
-          <p>{forecastHourly.pop}</p>
+        </div>
+        {/* Insert Data */}
+
+        <div class="flex items-center gap-x-4">
+          <img src={iconurl} alt="" />
+          <div class="flex gap-x-1">
+            <p>Rain -</p>
+            {forecastHourly.slice(0, 1).map((data, index) => {
+              return <p class=" justify-start">{data.pop}%</p>
+            })}
+            {/* // forecastHourly.weather[0].main */}
+            {/* <p class="capitalize ">{currentWeather.main}</p> */}
+          </div>
         </div>
         <div>
           <button class="bg-darkGray text-white  px-32 py-6 rounded-xl w-full">

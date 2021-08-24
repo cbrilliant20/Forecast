@@ -49,8 +49,8 @@ const Highlights = ({ current }) => {
         {/* Sunrise/Sunset */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-2 py-3 px-3">
           <p class="self-start text-lightGray">Sunrise & Sunset</p>
-          <div class="flex flex-col ">
-            <div class="flex items-center justify-between gap-x-4 ">
+          <div class="flex flex-col  ">
+            <div class="flex items-end justify-between gap-x-4 ">
               <p>
                 {new Date(current.sunrise * 1000).toLocaleTimeString([], {
                   hour: "2-digit",
@@ -59,7 +59,7 @@ const Highlights = ({ current }) => {
               </p>
               <img src={sunrise} class="w-1/4" />
             </div>
-            <div class="flex items-center justify-between gap-x-4 ">
+            <div class="flex items-end justify-between gap-x-4 ">
               <p>
                 {new Date(current.sunset * 1000).toLocaleTimeString([], {
                   hour: "2-digit",

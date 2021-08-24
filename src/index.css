@@ -5,11 +5,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 .tab-active {
-  color: #141414;
-  border-bottom: 1px solid #141414;
+  color: #48484a;
+  border-bottom: 1px solid #48484a;
 }
 
 .tab-deactive {
-  color: #cccccf;
+  color: #afafb3;
   border-bottom: 1px transparent;
 }
