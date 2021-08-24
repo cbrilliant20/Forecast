@@ -20,6 +20,7 @@ function App() {
   const [forecastDaily, setForecastDaily] = useState([])
   const [forecastHourly, setForecastHourly] = useState([])
   const [loading, setloading] = useState(true)
+  
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLatitude(position.coords.latitude)

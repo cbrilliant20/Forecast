@@ -9,10 +9,12 @@ import {
   faSun,
   faCloud,
 } from "@fortawesome/free-solid-svg-icons"
-import React from "react"
+import React, { useState } from "react"
 import moment from "moment"
 
 const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
+  const [toggle, setToggle] = useState(false)
+
   let weatherIcons = null
 
   if (icon === "Haze") {
@@ -43,8 +45,8 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl">
       <div class="py-8 px-4 flex  items-center justify-between ">
         <div class="flex gap-x-4">
-          <p>Today</p>
-          <p>Week</p>
+          <button onClick={() => setToggle(!toggle)}>Today</button>
+          <button onClick={() => setToggle(!toggle)}>Weekly</button>
         </div>
         <div class="flex gap-x-4">
           <button
@@ -63,30 +65,55 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
       </div>
 
       {/* Forecast Daily */}
-      <div class="flex flex-row gap-2 mx-4  text-center text-sm ">
-        {forecastDaily.slice(0, 5).map((data, index) => {
-          return (
-            <div
-              class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
-              key={index}
-            >
-              <p class="">{data.weather[0].description}</p>
-              {weatherIcons}
-              <p class="flex gap-x-2">
-                {Math.floor(data.temp.max)}
-                {"°"}
-                <span class="text-lightGray">
-                  {Math.floor(data.temp.min)}
+      {!toggle && (
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm ">
+          {forecastDaily.slice(0, 5).map((data, index) => {
+            return (
+              <div
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
+                key={index}
+              >
+                <p class="">{data.weather[0].description}</p>
+                {weatherIcons}
+                <p class="flex gap-x-2">
+                  {Math.floor(data.temp.max)}
                   {"°"}
-                </span>
-              </p>
-            </div>
-          )
-        })}
-      </div>
+                  <span class="text-lightGray">
+                    {Math.floor(data.temp.min)}
+                    {"°"}
+                  </span>
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      )}
 
       {/* Forecast Hourly */}
-
+      {toggle && (
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm ">
+          {forecastHourly.slice(0, 5).map((data, index) => {
+            return (
+              <div
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
+                key={index}
+              >
+                <p class="">{data.weather[0].description}</p>
+                {weatherIcons}
+                <p class="flex gap-x-2">
+                  {Math.floor(data.temp)}
+                  {"°"}
+                  <span class="text-lightGray">
+                    {Math.floor(data.temp)}
+                    { "°" }
+                    hi
+                  </span>
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      )}
     </section>
   )
 }
