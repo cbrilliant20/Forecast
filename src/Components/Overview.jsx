@@ -43,9 +43,7 @@ const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
       <div class="p-8 flex flex-col items-start justify-between h-full ">
-        {/* Insert Data */}
-        {weatherIcons}
-
+        <div class="text-5xl">{weatherIcons}</div>
         {/* Insert Data */}
         <p class="text-5xl flex">
           {Math.floor(temperature)} <span class="text-2xl ">°F</span>

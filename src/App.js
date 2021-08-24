@@ -23,6 +23,7 @@ function App() {
   // const [loading, seLloading] = useState(true)
   const [weatherDescription, setWeatherDescription] = useState(null)
   const [weatherMain, setWeatherMain] = useState(null)
+  const [current, setCurrent] = useState([])
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -45,6 +46,7 @@ function App() {
         setForecastHourly(weatherData.data.hourly)
         setWeatherDescription(weatherData.data.current.weather[0].description)
         setWeatherMain(weatherData.data.current.weather[0].main)
+        setCurrent(weatherData.data.current)
       })
   }, [latitude, longitude])
 
@@ -67,7 +69,13 @@ function App() {
           forecastHourly={forecastHourly}
           icon={icon}
         />
-        <Highlights class="row-span-2 col-span-2 ..." />
+        <Highlights
+          class="row-span-2 col-span-2 ..."
+          sunrise={sunrise}
+          sunset={sunset}
+          humidity={humidity}
+          current={current}
+        />
       </div>
     </div>
   )

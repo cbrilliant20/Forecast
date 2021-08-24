@@ -42,7 +42,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
 
   return (
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl">
-      <div class="py-8 px-4 flex  items-center justify-between ">
+      <div class="pt-8 px-4 flex  items-center justify-between ">
         <div class="flex gap-x-4">
           <button onClick={() => setToggle(!toggle)}>Today</button>
           <button onClick={() => setToggle(!toggle)}>Weekly</button>
@@ -66,7 +66,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
 
       {/* Forecast Daily */}
       {!toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize ">
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6">
           {forecastDaily.slice(0, 5).map((data, index) => {
             return (
               <div
@@ -91,14 +91,14 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
 
       {/* Forecast Hourly */}
       {toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize">
+        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6">
           {forecastHourly.slice(0, 5).map((data, index) => {
             return (
               <div
                 class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
                 key={index}
               >
-                <p class="">{data.weather[0].description}</p>
+                <p class="">{data.weather[0].main}</p>
                 {weatherIcons}
                 <p class="flex gap-x-2">
                   {Math.floor(data.temp)}
