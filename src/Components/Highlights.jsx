@@ -3,6 +3,7 @@ import { faCloudSun, faCloudRain } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { DateTime } from "luxon"
 
+
 const Highlights = ({ current }) => {
   return (
     <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl  -mt-4">
@@ -16,7 +17,7 @@ const Highlights = ({ current }) => {
 
       <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-4   ">
         {/* Humidity */}
-        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
+        <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3 ">
           <p class="self-start text-lightGray">Humidity</p>
           {Math.floor(current.humidity)} %
         </div>
@@ -46,19 +47,19 @@ const Highlights = ({ current }) => {
           </div>
         </div>
 
-        {/* Card #1 */}
+        {/* UV */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
           <p class="self-start text-lightGray">UV Index</p>
           {current.uvi}
         </div>
 
-        {/* Card #1 */}
+        {/* Visibility */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
           <p class="self-start text-lightGray">Visibility</p>
           {current.visibility / 1000} miles
         </div>
 
-        {/* Card #1 */}
+        {/* Feels Like */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3 px-3">
           <p class="self-start text-lightGray">Feels Like</p>
           {Math.round(current.feels_like)}°F

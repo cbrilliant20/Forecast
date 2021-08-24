@@ -10,6 +10,13 @@ import {
   faCloud,
 } from "@fortawesome/free-solid-svg-icons"
 import React, { useState } from "react"
+import cloud from "../Assets/cloud.png"
+import drizzle from "../Assets/drizzle.png"
+import fog from "../Assets/fog.png"
+import rain from "../Assets/rain.png"
+import snow from "../Assets/snow.png"
+import sun from "../Assets/sun.png"
+import thunder from "../Assets/thunder.png"
 
 const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
   const [toggle, setToggle] = useState(false)
@@ -17,27 +24,21 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
   let weatherIcons = null
 
   if (icon === "Haze") {
-    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+    weatherIcons = <img src={fog} />
   } else if (icon === "Thunderstorm") {
-    weatherIcons = <FontAwesomeIcon icon={faBolt} size="lg" color="#212121" />
+    weatherIcons = <img src={thunder} />
   } else if (icon === "Drizzle") {
-    weatherIcons = (
-      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
-    )
+    weatherIcons = <img src={drizzle} />
   } else if (icon === "Rain") {
-    weatherIcons = (
-      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
-    )
+    weatherIcons = <src src={rain} />
   } else if (icon === "Snow") {
-    weatherIcons = (
-      <FontAwesomeIcon icon={faSnowman} size="lg" color="#212121" />
-    )
+    weatherIcons = <img src={snow} />
   } else if (icon === "Mist") {
-    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+    weatherIcons = <img src={fog} />
   } else if (icon === "Clear") {
-    weatherIcons = <FontAwesomeIcon icon={faSun} size="lg" color="#212121" />
+    weatherIcons = <img src={sun} />
   } else if (icon === "Clouds") {
-    weatherIcons = <FontAwesomeIcon icon={faCloud} size="lg" color="#212121" />
+    weatherIcons = <img src={cloud} />
   }
 
   return (
@@ -70,11 +71,12 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
           {forecastDaily.slice(0, 5).map((data, index) => {
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-8 py-3"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-4 py-3"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>
-                {weatherIcons}
+                <div class="w-1/2">{weatherIcons}</div>
+
                 <p class="flex gap-x-2">
                   {Math.floor(data.temp.max)}
                   {"°"}
@@ -99,7 +101,7 @@ const Forecast = ({ forecastDaily, forecastHourly, icon }) => {
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>
-                {weatherIcons}
+                <div class="w-1/2">{weatherIcons}</div>{" "}
                 <p class="flex gap-x-2">
                   {Math.floor(data.temp)}
                   {"°"}

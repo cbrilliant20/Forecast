@@ -1,52 +1,42 @@
 import React from "react"
 import { DateTime } from "luxon"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faSearchLocation,
-  faCloudSun,
-  faCloudRain,
-  faSmog,
-  faBolt,
-  faSnowman,
-  faSun,
-  faCloud,
-} from "@fortawesome/free-solid-svg-icons"
+import cloud from "../Assets/cloud.png"
+import drizzle from "../Assets/drizzle.png"
+import fog from "../Assets/fog.png"
+import rain from "../Assets/rain.png"
+import snow from "../Assets/snow.png"
+import sun from "../Assets/sun.png"
+import thunder from "../Assets/thunder.png"
 
-const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
+const Overview = ({ temperature, icon, current, currentWeather }) => {
   let weatherIcons = null
 
   if (icon === "Haze") {
-    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+    weatherIcons = <img src={fog} />
   } else if (icon === "Thunderstorm") {
-    weatherIcons = <FontAwesomeIcon icon={faBolt} size="lg" color="#212121" />
+    weatherIcons = <img src={thunder} />
   } else if (icon === "Drizzle") {
-    weatherIcons = (
-      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
-    )
+    weatherIcons = <img src={drizzle} />
   } else if (icon === "Rain") {
-    weatherIcons = (
-      <FontAwesomeIcon icon={faCloudRain} size="lg" color="#212121" />
-    )
+    weatherIcons = <src src={rain} />
   } else if (icon === "Snow") {
-    weatherIcons = (
-      <FontAwesomeIcon icon={faSnowman} size="lg" color="#212121" />
-    )
+    weatherIcons = <img src={snow} />
   } else if (icon === "Mist") {
-    weatherIcons = <FontAwesomeIcon icon={faSmog} size="lg" color="#212121" />
+    weatherIcons = <img src={fog} />
   } else if (icon === "Clear") {
-    weatherIcons = <FontAwesomeIcon icon={faSun} size="lg" color="#212121" />
+    weatherIcons = <img src={sun} />
   } else if (icon === "Clouds") {
-    weatherIcons = <FontAwesomeIcon icon={faCloud} size="lg" color="#212121" />
+    weatherIcons = <img src={cloud} />
   }
 
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
       <div class="p-8 flex flex-col items-start justify-between h-full ">
-        <div class="text-5xl">{weatherIcons}</div>
+        <div class="w-2/3 ">{weatherIcons}</div>
         {/* Insert Data */}
         <p class="text-5xl flex">
-          {Math.floor(temperature)} <span class="text-2xl ">°F</span>
+          {Math.floor(current.temp)} <span class="text-2xl ">°F</span>
         </p>
         {/* Insert Data */}
         <p>
@@ -59,13 +49,13 @@ const Overview = ({ temperature, icon, weatherDescription, weatherMain }) => {
         <hr class="text-lightGray" />
         {/* Insert Data */}
         <div class="flex items-center gap-x-4">
-          {weatherIcons}
-          <p class="capitalize">{weatherDescription}</p>
+          <div class="w-1/6">{weatherIcons}</div>
+          <p class="capitalize ">{currentWeather.main}</p>
         </div>
         {/* Insert Data */}
         <div class="flex items-center gap-x-4 ">
-          {weatherIcons}
-          <p class="capitalize">{weatherMain}</p>
+          <div class="w-1/6 ">{weatherIcons}</div>
+          <p class="capitalize">{currentWeather.description}</p>
         </div>
         <div>
           <button class="bg-darkGray text-white  px-32 py-6 rounded-xl w-full">
