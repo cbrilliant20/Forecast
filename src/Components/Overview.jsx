@@ -19,7 +19,7 @@ const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
         </div>
         {/* Insert Data */}
         <p class="text-right lg:text-left">
-          {DateTime.now().toFormat("MMMM dd")}, {/* <br /> */}
+          {DateTime.now().toFormat("MMMM dd")},
           <span class="text-lightGray ml-1">
             {DateTime.now().toFormat("hh:mm")}
           </span>
