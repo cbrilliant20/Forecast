@@ -1,6 +1,6 @@
 import React from "react"
 import { DateTime } from "luxon"
-import rain from "../Assets/rain.png"
+import About from "./About"
 
 const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
   const iconurl = `http://openweathermap.org/img/wn/${currentWeather.icon}.png`
@@ -48,10 +48,8 @@ const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
             {/* <p class="capitalize ">{currentWeather.main}</p> */}
           </div>
         </div>
-        <div class="w-full ">
-          <button class="bg-darkGray text-white py-4 rounded-xl w-full">
-            About the App
-          </button>
+        <div class="bg-darkGray text-white py-4 rounded-xl w-full text-center ">
+          <About />
         </div>
       </div>
     </section>
