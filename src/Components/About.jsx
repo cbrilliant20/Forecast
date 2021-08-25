@@ -17,7 +17,10 @@ const About = () => {
       {(onClick) => (
         <div class="bg-offWhite text-darkGray py-4 rounded-xl w-full px-3 text-lg flex flex-col gap-y-10 ">
           <p>Thanks for visiting the Forecast Weather Dashboard! </p>
-          <p>This app was built using React and Tailwind CSS. </p>
+          <p>
+            This app was built using React, Tailwind CSS, and the
+            OpenWeatherMaps API.{" "}
+          </p>
           <p>
             If you'd like to get in touch, please feel free to message me on my
             socials or email me directly.{" "}
@@ -37,7 +40,11 @@ const About = () => {
             >
               <FontAwesomeIcon icon={faGithubSquare} />
             </a>
-            <a href="#" target="_blank" rel="noreferrer">
+            <a
+              href="mailto:cbrilliant20@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faEnvelopeSquare} />
             </a>
           </div>
