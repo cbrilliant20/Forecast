@@ -37,24 +37,24 @@ function App() {
   }, [latitude, longitude])
 
   return (
-    <div
-      className="App"
-      class="bg-lightGray text-darkGray p-12 h-screen w-screen relative font-poppins "
-    >
-      <div class="bg-white  h-full grid grid-rows-4 grid-cols-3 rounded-3xl ">
+    <div className="App" class=" text-darkGray font-poppins ">
+      <div class="bg-white lg:mt-20 mt-8 container grid lg:grid-rows-4 lg:grid-cols-3 lg:rounded-3xl grid-rows-3 grid-cols-1 lg:border lg:shadow ">
         <Overview
-          class="row-span-3 "
+          class="rows-span-1 lg:row-span-3 "
           current={current}
           currentWeather={currentWeather}
           pop={pop}
           forecastHourly={forecastHourly}
         />
         <Forecast
-          class="col-span-3 "
+          class="rows-span-1 lg:col-span-3 "
           forecastDaily={forecastDaily}
           forecastHourly={forecastHourly}
         />
-        <Highlights class="row-span-2 col-span-2 " current={current} />
+        <Highlights
+          class="rows-span-1 lg:row-span-2 lg:col-span-2 "
+          current={current}
+        />
       </div>
     </div>
   )

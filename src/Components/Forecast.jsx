@@ -8,10 +8,10 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
   }
 
   return (
-    <section class="bg-offWhite row-span-2 col-span-2 rounded-r-3xl">
-      <div class="pt-8 px-4 flex  items-center justify-between ">
+    <section class="lg:bg-offWhite row-span-2 col-span-2 lg:rounded-r-3xl">
+      <div class="pt-8 lg:px-4 flex pb-4 items-center justify-between ">
         <div class="flex gap-x-4">
-          <button 
+          <button
             onClick={handleClick}
             className={`tab-active ${toggle ? "tab-deactive" : ""}`}
           >
@@ -29,7 +29,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
         {/* F+C Button */}
         <div class="flex gap-x-4">
           <button
-            class="bg-darkGray text-white active:bg-pink-600 font-bold uppercase text-base py-2 px-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150"
+            class="bg-darkGray text-white  font-bold uppercase text-base py-2 px-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150"
             type="button"
           >
             <p class="flex ">°F</p>
@@ -45,7 +45,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
 
       {/* Forecast Daily */}
       {toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6">
+        <div class="flex flex-row gap-1 lg:gap-2 lg:mx-4  text-center text-sm capitalize mt-6 ">
           {forecastDaily.slice(0, 5).map((data, index) => {
             const iconurl =
               "http://openweathermap.org/img/wn/" +
@@ -53,7 +53,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
               "@2x.png"
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-4 py-3"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl  gap-y-4 py-3 border mb-8 lg:mb-0 lg:border-none shadow"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>
@@ -74,7 +74,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
 
       {/* Forecast Weekly */}
       {!toggle && (
-        <div class="flex flex-row gap-2 mx-4  text-center text-sm capitalize mt-6 ">
+        <div class="flex flex-row gap-1 lg:gap-2 lg:mx-4  text-center text-sm capitalize mt-6 ">
           {forecastHourly.slice(0, 5).map((data, index) => {
             const iconurl =
               "http://openweathermap.org/img/wn/" +
@@ -82,7 +82,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
               "@2x.png"
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-4 py-3"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl  gap-y-4 py-3  mb-8 lg:mb-0 border lg:border-none shadow"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>

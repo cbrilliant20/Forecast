@@ -1,5 +1,6 @@
 import React from "react"
 import { DateTime } from "luxon"
+import rain from "../Assets/rain.png"
 
 const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
   const iconurl = `http://openweathermap.org/img/wn/${currentWeather.icon}.png`
@@ -8,10 +9,11 @@ const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
 
   return (
     <section class="bg-white row-span-4 col-span-1 rounded-3xl">
-      <div class="p-8 flex flex-col items-start justify-between h-full ">
-        <img src={iconurlLarge} alt="" class="self-center -m-8 w-3/4 " />
+      <div class="lg:p-8 lg:flex lg:flex-col items-center lg:items-start justify-between h-full  ">
+        <div></div>
+        <img src={iconurlLarge} alt="#" class="self-center lg:-m-8 lg:w-3/4 " />
         {/* Insert Data */}
-        <p class="text-5xl flex">
+        <p class="text-5xl flex ">
           {Math.floor(current.temp)} <span class="text-2xl ">°F</span>
         </p>
         {/* Insert Data */}
@@ -22,28 +24,32 @@ const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
           </span>
         </p>
 
-        <div class="h-1 w-full bg-offWhite self-center"></div>
+        <div class=" hidden lg:block h-1 w-full bg-offWhite self-center"></div>
 
         {/* Insert Data */}
         <div class="flex items-center gap-x-4 ">
-          <img src={iconurl} alt="" />
+          <img src={iconurl} alt="#" />
           <p class="capitalize">{currentWeather.description}</p>
         </div>
         {/* Insert Data */}
 
         <div class="flex items-center gap-x-4">
-          <img src={iconurl} alt="" />
+          <img src="https://openweathermap.org/img/wn/10d.png" alt="#" />
           <div class="flex gap-x-1">
             <p>Rain -</p>
             {forecastHourly.slice(0, 1).map((data, index) => {
-              return <p class=" justify-start">{data.pop}%</p>
+              return (
+                <p class=" justify-start" key={index}>
+                  {data.pop}%
+                </p>
+              )
             })}
             {/* // forecastHourly.weather[0].main */}
             {/* <p class="capitalize ">{currentWeather.main}</p> */}
           </div>
         </div>
-        <div>
-          <button class="bg-darkGray text-white  px-32 py-6 rounded-xl w-full">
+        <div class="w-full ">
+          <button class="bg-darkGray text-white py-4 rounded-xl w-full">
             About the App
           </button>
         </div>
