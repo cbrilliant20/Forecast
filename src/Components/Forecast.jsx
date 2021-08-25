@@ -53,7 +53,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
               "@2x.png"
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl  gap-y-4 py-3 border mb-8 lg:mb-0 lg:border-none shadow"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl lg:bg-white  gap-y-4 py-3 border mb-8 lg:mb-0 lg:border-none shadow"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>
@@ -82,7 +82,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
               "@2x.png"
             return (
               <div
-                class="flex flex-1 flex-col justify-evenly items-center rounded-xl  gap-y-4 py-3  mb-8 lg:mb-0 border lg:border-none shadow"
+                class="flex flex-1 flex-col justify-evenly items-center rounded-xl  lg:bg-white gap-y-4 py-3  mb-8 lg:mb-0 border lg:border-none shadow"
                 key={index}
               >
                 <p class="">{data.weather[0].main}</p>

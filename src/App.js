@@ -37,8 +37,8 @@ function App() {
   }, [latitude, longitude])
 
   return (
-    <div className="App" class=" text-darkGray font-poppins ">
-      <div class="bg-white lg:mt-20 mt-8 container grid lg:grid-rows-4 lg:grid-cols-3 lg:rounded-3xl grid-rows-3 grid-cols-1 lg:border lg:shadow ">
+    <div className="App" class=" text-darkGray font-poppins container ">
+      <div class="bg-white lg:mt-8  grid lg:grid-rows-4 lg:grid-cols-3 lg:rounded-3xl grid-rows-3 grid-cols-1 lg:border lg:shadow ">
         <Overview
           class="rows-span-1 lg:row-span-3 "
           current={current}

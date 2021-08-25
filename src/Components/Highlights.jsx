@@ -18,7 +18,7 @@ const Highlights = ({ current }) => {
 
       {/* Cards */}
 
-      <div class="grid grid-cols-3 grid-rows-2 gap-1 lg:mx-4 text-sm lg:text-base">
+      <div class="grid grid-cols-3 grid-rows-2 gap-1 lg:mx-4 mb-8 text-sm lg:text-base">
         {/* Feels Like */}
         <div class="flex flex-1 flex-col justify-evenly items-center rounded-xl bg-white gap-y-2 py-3 px-3  border lg:border-none shadow">
           <p class="lg:self-start  text-lightGray">Feels Like</p>
