@@ -14,7 +14,7 @@ const Overview = ({ icon, current, currentWeather, pop, forecastHourly }) => {
           <img src={iconurlLarge} alt="#" class=" lg:transform lg:scale-110" />
           {/* Insert Data */}
           <p class="text-5xl flex  ">
-            {Math.floor(current.temp)} <span class="text-2xl  ">°F</span>
+            {Math.floor(current.temp)} <span class="text-2xl">°F</span>
           </p>
         </div>
         {/* Insert Data */}
