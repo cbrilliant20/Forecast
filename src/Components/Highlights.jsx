@@ -9,8 +9,8 @@ import visibility from "../Assets/visibility.png"
 
 const Highlights = ({ current }) => {
   return (
-    <section class="row-span-2 col-span-2 lg:rounded-r-3xl  ">
-      <div class="lg:px-4 flex  items-center justify-between pb-4">
+    <section class="row-span-2 col-span-2 lg:rounded-br-3xl  lg:bg-offWhite">
+      <div class="lg:pl-4 flex  items-center justify-between pb-4">
         <div class="flex gap-x-4 mb-5">
           <p>Today's Highlights</p>
         </div>

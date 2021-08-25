@@ -8,7 +8,7 @@ const Forecast = ({ forecastDaily, forecastHourly }) => {
   }
 
   return (
-    <section class="lg:bg-offWhite row-span-2 col-span-2 lg:rounded-r-3xl">
+    <section class="lg:bg-offWhite  row-span-2 col-span-2 lg:rounded-tr-3xl">
       <div class="pt-8 lg:px-4 flex pb-4 items-center justify-between ">
         <div class="flex gap-x-4">
           <button

@@ -23,13 +23,21 @@ const About = () => {
             socials or email me directly.{" "}
           </p>
           <div class="flex gap-x-5 items-center justify-center text-6xl">
-            <a href="">
+            <a
+              href="https://www.linkedin.com/in/cameron-brilliant/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="">
+            <a
+              href="https://github.com/cbrilliant20"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faGithubSquare} />
             </a>
-            <a href="">
+            <a href="#" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faEnvelopeSquare} />
             </a>
           </div>
